@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: root
+    password: 3193
+    url: jdbc:mysql://127.0.0.1:3306/zcourse?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: zcourse-course
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+server:
+  port: 8500
