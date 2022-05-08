@@ -1,0 +1,19 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /zcourse-admin-api
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://119.29.58.224:3306/zcourse?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+zcourse:
+  jwt:
+    # 加密密钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5[www.zcourse.io]
+    # 有效时长，1天，单位/秒
+    expire: 600
+    header: token

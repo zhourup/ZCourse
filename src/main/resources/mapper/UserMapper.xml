@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhourup.zcourse.dao.UserDao">
+
+    <resultMap id="UserDTO" type="com.zhourup.zcourse.domain.dto.UserDTO"></resultMap>
+
+    <sql id="baseSql">
+        e.id,
+        e.login_name,
+        e.login_pwd,
+        e.actual_name,
+        e.nick_name,
+        e.phone,
+        e.birthday,
+        e.email,
+        e.update_time,
+        e.create_time,
+        e.is_delete
+    </sql>
+
+    <select id="login" resultMap="UserDTO">
+        select
+        <include refid="baseSql"></include>
+        from
+        t_user e
+        where
+        e.login_name=#{loginName} and e.login_pwd=#{loginPwd}
+    </select>
+
+
+</mapper>
